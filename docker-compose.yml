@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "5000:5000"
+    environment:
+      - DB_HOST=database
+      - DB_USER=root
+      - DB_PASSWORD=root
+    depends_on:
+      - database
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_API_URL=http://localhost:5000
+
+  database:
+    image: mysql:8.0
+    container_name: mysql_db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: exampledb
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  utility1:
+    build:
+      context: ./services/logs
+    ports:
+      - "6000:6000"
+    command: ["tail", "-f", "/dev/null"]  # Maintenir le conteneur actif
+
+  utility2:
+    build:
+      context: ./services/stats
+    ports:
+      - "7000:7000"
+    command: ["tail", "-f", "/dev/null"]  # Maintenir le conteneur actif

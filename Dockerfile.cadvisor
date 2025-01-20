@@ -1,0 +1,8 @@
+# Utiliser l'image officielle de cAdvisor depuis Docker Hub
+FROM google/cadvisor:latest
+
+# Exposer le port 8080 pour accéder à l'interface web de cAdvisor
+EXPOSE 8080
+
+# Définir le point d'entrée (cAdvisor démarre automatiquement à l'exécution)
+CMD ["--publish=8080:8080"]

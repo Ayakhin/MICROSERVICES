@@ -6,3 +6,4 @@ EXPOSE 8080
 
 # Définir le point d'entrée (cAdvisor démarre automatiquement à l'exécution)
 CMD ["--publish=8080:8080"]
+

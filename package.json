@@ -1,0 +1,21 @@
+{
+  "name": "my-hello-world-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "node ./backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ayakhin/MICROSERVICES.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ayakhin/MICROSERVICES/issues"
+  },
+  "homepage": "https://github.com/Ayakhin/MICROSERVICES#readme",
+  "description": ""
+}

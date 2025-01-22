@@ -25,5 +25,9 @@ COPY --from=0 /app/build /usr/share/nginx/html
 # Exposer le port sur lequel Nginx écoute
 EXPOSE 80
 
+# Ajouter un health check pour vérifier si l'application React fonctionne
+HEALTHCHECK --interval=30s --timeout=10s --retries=3 \
+  CMD curl --silent --fail http://localhost || exit 1
+
 # Lancer Nginx
 CMD ["nginx", "-g", "daemon off;"]

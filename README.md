@@ -1,3 +1,111 @@
+# My Hello World App
+
+Ce projet contient une application Node.js simple avec un backend Express, une base de données MySQL, et une interface front-end. Il est conteneurisé à l'aide de Docker et Docker Compose.
+
+## Prérequis
+
+Avant de commencer, assurez-vous d'avoir installé les outils suivants sur votre machine :
+
+- [Docker](https://www.docker.com/get-started)
+- [Docker Compose](https://docs.docker.com/compose/install/)
+- [Node.js](https://nodejs.org/) (si vous souhaitez tester le backend localement sans Docker)
+
+## Structure du projet
+
+Voici la structure du projet :
+
+my-hello-world-app/ ├── backend/ │ ├── Dockerfile │ ├── server.js │ └── package.json ├── frontend/ │ ├── Dockerfile │ └── [fichiers front-end] ├── docker-compose.yml └── README.md
+
+## Build et Run avec Docker
+
+### 1. **Cloner le projet**
+
+Clonez le projet depuis GitHub (ou un autre dépôt) sur votre machine locale :
+
+```bash
+git clone https://github.com/ton-utilisateur/my-hello-world-app.git
+cd my-hello-world-app
+```
+
+
+# 2. Construire et démarrer les services avec Docker Compose
+Le projet utilise Docker Compose pour orchestrer les différents services (backend, frontend, MySQL, etc.). Vous pouvez construire et démarrer les services en exécutant la commande suivante dans la racine du projet :
+
+docker-compose up --build
+
+
+Cette commande va :
+
+Construire les images Docker pour le backend et le frontend.
+Démarrer les services, y compris MySQL, le backend sur le port 5000 et le frontend sur le port 3000.
+Utiliser docker-compose.yml pour configurer les ports et les dépendances entre les conteneurs.
+# 3. Accéder à l'application
+Une fois les services démarrés, vous pouvez accéder à l'application de la manière suivante :
+
+Backend API : http://localhost:5000
+Point d'entrée : GET / renvoie "Hello World from Backend!"
+Point de vérification de santé : GET /api/health renvoie { status: "OK" }
+Frontend : http://localhost:3000
+Une interface utilisateur simple qui communique avec le backend via l'API.
+# 4. Vérification de l'état de santé de l'application
+Vous pouvez tester la route /api/health du backend pour vérifier que l'application fonctionne correctement. Utilisez la commande suivante :
+
+```bash
+curl http://localhost:5000/api/health
+```
+
+Cela devrait renvoyer une réponse de type :
+
+```json
+{
+  "status": "OK"
+}
+```
+
+# 5. Arrêter les services
+Pour arrêter les services et nettoyer les conteneurs, utilisez la commande suivante :
+
+```bash
+docker-compose down
+
+```
+Cela arrêtera et supprimera les conteneurs, mais les images Docker resteront sur votre machine.
+
+# Développement local sans Docker
+Si vous préférez tester l'application sans Docker, vous pouvez suivre ces étapes :
+
+Backend
+Installez les dépendances du backend :
+```bash
+cd backend
+npm install
+
+```
+
+
+# Démarrez le backend sur le port 5000 :
+
+```bash
+npm start
+```
+L'application backend sera accessible à http://localhost:5000.
+
+# Frontend
+Installez les dépendances du frontend :
+
+```bash
+cd frontend
+npm install
+```
+
+Démarrez le frontend sur le port 3000 :
+```bash
+npm start
+```
+L'application frontend sera accessible à http://localhost:3000.
+
+
+
 # GitHub Actions CI/CD Workflow
 
 # Description
@@ -93,6 +201,10 @@ Implémenter un déploiement automatique vers un environnement de production.
 Intégrer un monitoring pour les conteneurs en production.
 
 Ressources
+
+
+
+
 
 GitHub Actions Documentation
 

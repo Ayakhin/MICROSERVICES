@@ -64,17 +64,7 @@ Vérifie que les conteneurs démarrent correctement et que les images se constru
 
 Arrête et supprime tous les conteneurs après les tests, quelle que soit l'issue des étapes précédentes.
 
-Pourquoi ce Workflow est Important ?
-
-Automatisation des tests : Permet de détecter les erreurs ou les mauvaises pratiques dans le code dès qu'il est poussé.
-
-Maintien des standards : Le linting garantit que le Dockerfile suit les bonnes pratiques.
-
-Fiabilité du déploiement : Simule un déploiement en production grâce aux étapes de build et d'exécution.
-
-Nettoyage de l'environnement : S'assure que l'environnement de test est propre après chaque exécution.
-
-Comment Utiliser ce Workflow ?
+# Comment Utiliser ce Workflow ?
 
 Assurez-vous que votre fichier docker-compose.yml et vos Dockerfiles sont correctement configurés.
 
@@ -82,7 +72,7 @@ Modifiez ou ajoutez du code dans la branche main ou soumettez une pull request.
 
 Consultez l'onglet Actions sur GitHub pour voir les résultats des tests et des étapes CI/CD.
 
-Exemple de Résultat
+# Exemple de Résultat
 
 Si tout fonctionne correctement :
 
@@ -90,7 +80,7 @@ Les tests passent avec succès.
 
 Les conteneurs se construisent et s'exécutent sans erreur.
 
-En cas d'erreur :
+# En cas d'erreur :
 
 Le workflow s'arrête et affiche un message d'erreur détaillé, permettant de corriger rapidement.
 

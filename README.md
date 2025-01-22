@@ -1,4 +1,4 @@
-# My Hello World App
+# PROJET MICROSERVICES
 
 Ce projet contient une application Node.js simple avec un backend Express, une base de données MySQL, et une interface front-end. Il est conteneurisé à l'aide de Docker et Docker Compose.
 

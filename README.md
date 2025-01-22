@@ -1,4 +1,4 @@
-GitHub Actions CI/CD Workflow
+# GitHub Actions CI/CD Workflow
 
 Description
 
@@ -8,7 +8,7 @@ Workflow : CI/CD Workflow
 
 Déclencheurs
 
-Le workflow est automatiquement déclenché dans les cas suivants :
+# Le workflow est automatiquement déclenché dans les cas suivants :
 
 Push : Lorsque des modifications sont poussées dans la branche main.
 

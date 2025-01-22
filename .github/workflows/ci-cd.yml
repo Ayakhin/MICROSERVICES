@@ -30,7 +30,7 @@ jobs:
       # Lint Dockerfile (vérifie que la syntaxe est correcte)
       - name: Lint Dockerfile
         run: |
-          docker run --rm -i ghcr.io/hadolint/hadolint:v2.9.0 < Dockerfile.cadvisor
+          docker run --rm -i hadolint/hadolint:latest < Dockerfile.cadvisor
 
       # Construire et tester les services avec Docker Compose
       - name: Build and Test with Docker Compose

@@ -18,7 +18,7 @@ Environnement
 
 Le workflow s'exécute sur une machine virtuelle utilisant Ubuntu (ubuntu-latest).
 
-Étapes du Workflow
+# Étapes du Workflow
 
 1. Vérification du code source
 
